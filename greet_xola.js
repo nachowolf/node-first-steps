@@ -1,13 +1,31 @@
+const greet = require("./greet")
+const chalk = require("chalk")
+const figlet = require("figlet")
 
-const greet = require("./greet");
-const figlet = require("figlet");
+const test = chalk.bgGreen.black(greet("Xola"))
 
-figlet("Hello World!!", function(err, data) {
+console.log(test)
+
+figlet("Hello world !!!", function(err, data) {
 if (err) {
 console.log("Something went wrong...");
 console.dir(err);
 return;
 }
 
+
 console.log(data)
+
+});
+
+figlet("Xola", function(err, data) {
+if (err) {
+console.log("Something went wrong...");
+console.dir(err);
+return;
+}
+
+
+console.log(chalk.bgRed.blue(data))
+
 });
